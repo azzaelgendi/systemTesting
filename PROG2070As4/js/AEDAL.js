@@ -2,8 +2,8 @@
  * File Name: AEdfeedback.js
  *
  * Revision History:
- *       Azza Elgendy, March 2nd : Created
- *       March 25th :Edited
+ *       Azza Elgendy, March 31 : Created
+ *       April 2nd :Edited
  */
 // Review table CRUD
 var Seller = {
@@ -69,7 +69,7 @@ var Seller = {
         }
 
         db.transaction(txFunction, errorHandler, successTransaction);
-    },
+    }
 };
 
 

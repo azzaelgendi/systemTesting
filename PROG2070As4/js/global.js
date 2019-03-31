@@ -17,7 +17,7 @@ function MyCapitalAll(text) {
 function show_link() {
     $("#formDivR").show();
     var link = "http://www.jdpower.com/cars/" + localStorage.getItem("make") +
-        "/" + localStorage.getItem("model")+ "/" + localStorage.getItem("year");
+        "/" + localStorage.getItem("model") + "/" + localStorage.getItem("year");
     $("#nameR").val(localStorage.getItem("sellerName"));
     $("#phoneR").val(localStorage.getItem("phone"));
     $("#emailR").val(localStorage.getItem("email"));
@@ -26,43 +26,42 @@ function show_link() {
     $("#modelR").val(localStorage.getItem("model"));
     $("#yearR").val(localStorage.getItem("year"));
     console.info(link);
-    $("#formDivR a").attr('href',link)
+    $("#formDivR a").attr('href', link)
 }
 
 function save_database() {
 
+    console.info("Saving to database")
     var link = "http://www.jdpower.com/cars/" + localStorage.getItem("make") +
-        "/" + localStorage.getItem("model")+ "/" + localStorage.getItem("year");
-    var name=(localStorage.getItem("sellerName"));
-   var phone=(localStorage.getItem("phone"));
-    var email=(localStorage.getItem("email"));
-    var city=(localStorage.getItem("city"));
-    var make=(localStorage.getItem("make"));
-    var model=(localStorage.getItem("model"));
-   var year=(localStorage.getItem("year"));
-    if (btnSubmit_click()){
+        "/" + localStorage.getItem("model") + "/" + localStorage.getItem("year");
+    var name = (localStorage.getItem("sellerName"));
+    var phone = (localStorage.getItem("phone"));
+    var email = (localStorage.getItem("email"));
+    var city = (localStorage.getItem("city"));
+    var make = (localStorage.getItem("make"));
+    var model = (localStorage.getItem("model"));
+    var year = (localStorage.getItem("year"));
 
-        var opt = [name, city, email, phone, make, model, year,link];
+
+        var opt = [name, email, city, phone, make, model, year, link];
 
         //3. insert into table (by calling insert DAL function and supplying input values
         function callback() {
-            console.info("Review inserted successfully");
+            console.info("seller inserted successfully");
         }
 
         Seller.AEinsert(opt, callback);
-        alert("New Feedback added");
-        $(location).prop('href', "#AEViewFeedbackPage");
+        alert("New search added");
+        $(location).prop('href', "../index.html");
 
-    } else {
-        console.info("Validation Error");
-    }
+
 }
 
 function init() {
     console.info("Dom is ready");
     $("#name").on("change", MyFirstUpper);
     $("#btnshow").on("click", show_link);
-    $("#AEUpdate").on("click",save_database);
+    $("#AEUpdate").on("click", save_database);
 }
 
 function AEinitDB() {
