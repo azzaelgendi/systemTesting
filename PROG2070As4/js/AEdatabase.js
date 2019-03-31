@@ -19,7 +19,7 @@ var DB = {
 
     // Whenever we create a function onside an object we follow this approach: "functionName: functionBody() {}"
     AECreateDatabase: function () {
-        var shortName = "sellerDB";
+        var shortName = "CarDB";
         var version = "1.0";
         var displayName = "DB for cars sellers app";
         var dbSize = 2 * 1024 * 1024; // this is a 2 MB estimated size

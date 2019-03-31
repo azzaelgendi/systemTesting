@@ -119,3 +119,17 @@ label.error
 .header{
     position: fixed;
 }
+th {
+    width: 13em;
+    text-align: left;
+    background: #24943A;
+    background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+    font-size: 19px;
+    font-weight: bold;
+    color: #F0F0F0;
+    border-left: 2px solid #24943A;
+}
+th,td{
+    border: 1px solid #24943A;
+    padding: 3px 2px;
+}

@@ -1,18 +1,18 @@
 // trim & first to upper function
 function MyFirstUpper() {
     var name = $("#name").val();
-    console.info(name);
+
     name = name.toLowerCase().trim();
     name = name.charAt(0).toUpperCase() + name.slice(1);
     $("#name").val(name);
-    console.info(name);
+
 
 }
 
 //all capital letters for postal code
-function MyToLowerCaseAll(text) {
-    text.value = text.value.toLowerCase().trim();
-}
+// function MyToLowerCaseAll( ) {
+//     $("#carForm :input").val().toLowerCase().trim();
+// }
 
 function show_link() {
     $("#formDivR").show();
@@ -52,7 +52,53 @@ function save_database() {
 
     Seller.AEinsert(opt, callback);
     alert("New search added");
-    $(location).prop('href', "../index.html");
+    // $(location).prop('href', "../index.html");
 
+
+}
+
+function show_history() {
+
+    alert("want to show history");
+    var options = [];
+
+    function callback(tx, results) {
+        var htmlCode = "";
+
+        htmlCode +=
+            "<tr>" +
+            "<th>" + 'Seller Name' + "</th>" +
+            "<th>" + 'city' + "</th>" +
+            "<th>" + 'Email' + "</th>" +
+            "<th style='text-align: right;'>" + 'phone' + "</th>" +
+            "<th style='text-align: center;'>" + 'Car Make' + "</th>" +
+            "<th>" + 'Car Model' + "</th>" +
+            "<th>" + 'Year' + "</th>" +
+            "<th>" + 'Link' + "</th>" +
+            "</tr>";
+        // results.rows.length gets the length
+        for (var i = 0; i < results.rows.length; i++) {
+            var row = results.rows[i];
+
+            // Appending all the "li" inside the html code
+            htmlCode += "<tr>" +
+                "<td>" + row['name'] + "</td>" +
+                "<td>" + row['city'] + "</td>" +
+                "<td>" + row['email'] + "</td>" +
+                "<td style='text-align: right;'>" + row['phone'] + "</td>" +
+                "<td style='text-align: center;'>" + row['make'] + "</td>" +
+                "<td>" + row['model'] + "</td>" +
+                "<td>" + row['year'] + "</td>" +
+                "<td>" + row['link'] + "</td>" +
+                "</tr>";
+        }
+        var lv = $("#AESearchList");
+        lv = lv.html(htmlCode);
+        lv.listview("refresh");
+
+
+    }
+
+    Seller.AEselectAll(options, callback);
 
 }

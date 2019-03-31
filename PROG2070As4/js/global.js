@@ -3,14 +3,11 @@
 function init() {
     console.info("Dom is ready");
 
-    $("#model").on("change",MyToLowerCaseAll);
     $("#btnshow").on("click", show_link);
     $("#AEUpdate").on("click", save_database);
     $("#name").on("change", MyFirstUpper);
-    $("#email").on("change",MyToLowerCaseAll);
-    $("#make").on("change",MyToLowerCaseAll);
-    $("#city").on("change", MyFirstUpper);
     $("#btnSubmit").on("click", btnSubmit_click);
+    $("#showSA").on("click",show_history);
 }
 
 function AEinitDB() {
@@ -28,8 +25,9 @@ function AEinitDB() {
 
 //ready function
 $(document).ready(function () {
-    init();
     AEinitDB();
+    init();
+
 
 });
 
