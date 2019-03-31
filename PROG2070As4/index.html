@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--jQuery-->
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <!--jQuery mobile-->
+    <!--<script src="js/lib/jquery.mobile-1.4.5.js"></script>-->
+    <!--jQuery Validation-->
+    <script src="js/lib/jquery.validate.js"></script>
+    <!--jQuery mobile css-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+    <!--&lt;!&ndash;Database JavaScript&ndash;&gt;-->
+    <script src="js/AEdatabase.js"></script>
+    <!--&lt;!&ndash;Data Access Layer JavaScript (with all CRUD operations)&ndash;&gt;-->
+    <script src="js/AEDAL.js"></script>
+    <!--&lt;!&ndash;The business logic JavaScript&ndash;&gt;-->
+    <!--<script src="js/avengersFacade.js"></script>-->
+    <!--&lt;!&ndash;Utility functions JavaScript&ndash;&gt;-->
+    <script src="js/validations.js"></script>
+    <!--Global JavaScript-->
+    <script src="js/global.js"></script>
+    <!--My style css-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>PROG2070Assign4</title>
+</head>
+    <header>
+        <h1>The Car Hub</h1>
+        <div class="photobanner">
+            <img src="images/car1.png" alt="" width="184" height="184">
+            <img src="images/car2.png" alt="" width="184" height="184">
+            <img src="images/car3.png" alt="" width="184" height="184">
+            <img src="images/car4.png" alt="" width="184" height="184">
+            <img src="images/car5.png" alt="" width="184" height="184">
+            <img src="images/car6.png" alt="" width="184" height="184">
+            <img src="images/car7.png" alt="" width="184" height="184">
+            <img src="images/car8.png" alt="" width="184" height="184">
+            <!--<img src="images/car9.png" alt="" width="130" height="184">-->
+        </div>
+        <div >
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a  href="pages/searchlink.html">Link</a></li>
+                <li><a href="pages/searchhistory.html">History</a></li>
+                <li style="float:right"><a href="pages/about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+<section  id="main" name="main" class="container">
+    <div id="formDiv" name="formDiv">
+        <form name="carForm" id="carForm" action="pages/searchlink.html">
+            <h2>Post a Car for Sale</h2>
+            <div id="fSet" name="fSet">
+                <fieldset>
+                    <h2>Personal Information</h2>
+                    <label for="name">Seller Name:</label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="phone">Phone Number:</label><br>
+                    <input type="text" name="phone" id="phone"><br>
+                    <label for="city">City:</label><br>
+                    <input type="text" id="city" name="city"><br>
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" name="email"><br>
+                </fieldset>
+                <fieldset id="info" name="info">
+                    <h2>Add your vehicle information</h2>
+                    <label for="model">Model</label><br>
+                    <input type="text" id="model" name="model"><br>
+                    <label for="make">Make</label><br>
+                    <input type="text" id="make" name="make"><br>
+                    <label for="year">Year</label><br>
+                    <input type="text" id="year" name="year"><br>
+                </fieldset>
+            </div>
+            <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit"><br>
+        </form>
+    </div>
+    <div hidden id="sidebarA">
+        <span id="error" name="error"></span>
+    </div>
+</section>
+<footer data-role="footer" data-position="fixed">
+    <div class="footer">&copy; 2019 &nbsp;<a href="mailto:aelgendy7114@conestogac.on.ca">
+         Azza Elgendy</a></div>
+</footer>
+</html>
+
+
