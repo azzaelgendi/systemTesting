@@ -6,7 +6,7 @@
  *       March 25th :Edited
  */
 // Review table CRUD
-var Review = {
+var Seller = {
     AEinsert: function (options, callback) {
 
         function txFunction(tx) {
