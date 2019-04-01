@@ -17,50 +17,11 @@ namespace PROG2070Assignment4
         public void Setup()
         {
             driver = new FirefoxDriver();
-            driver.Navigate().GoToUrl("file:///C:/Users/AZZA%20ELGENDY/Desktop/PROG2070As4/index.html");
+            driver.Navigate().GoToUrl("file:///C:/Users/AZZA%20ELGENDY/Desktop/github/systemTesting/PROG2070As4/index.html");
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             string title = driver.Title;
             Assert.AreEqual("PROG2070Assign4", title);
         }
-        [TearDown]
-        public void TeardownTest()
-        {
-            if (driver != null)
-            {
-                try
-                {
-                   // driver.Quit();
-                }
-                catch (Exception ex)
-                {
-
-
-                }
-            }
-        }
-
-        //[Test]
-        //public void TestDuckDuckGoSearch_TitleIsCorrect()
-        //{
-        //    IWebElement searchBar = driver.FindElement(By.Id("name"));
-
-        //    searchBar.Clear();
-
-        //    searchBar.SendKeys("conestogaCollege");
-
-        //    IWebElement searchButton = driver.FindElement(By.Id("search_button_homepage"));
-
-        //    searchButton.Click();
-
-        //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-        //    wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div[1]/div[1]/div[1]/a/span")));
-
-        //    string title = driver.Title;
-
-        //    Assert.AreEqual("conestoga college at DuckDuckGo", title);
-        //}
-
         [Test]
         public void Test_Link()
         {
@@ -86,11 +47,30 @@ namespace PROG2070Assignment4
 
 
             IWebElement searchButton = driver.FindElement(By.Id("btnSubmit"));
-            IWebElement findLink = driver.FindElement(By.Id("alink"));
-
+            IWebElement findLink = driver.FindElement(By.Id("name"));
+            Console.WriteLine("submit");
             searchButton.Click();
-            string link = "https://www.jdpower.com/Cars/2019/kia/rio";
-            Assert.AreEqual(findLink, link);
+            string title = driver.Title;
+            //"https://www.jdpower.com/Cars/2019/kia/rio";
+            Assert.AreEqual(title, "link ready");
+        }
+
+        [Test]
+        [TearDown]
+        public void TeardownTest()
+        {
+            if (driver != null)
+            {
+                try
+                {
+                   // driver.Quit();
+                }
+                catch (Exception ex)
+                {
+
+
+                }
+            }
         }
     }
 }

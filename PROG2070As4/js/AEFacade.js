@@ -8,12 +8,6 @@ function MyFirstUpper() {
 
 
 }
-
-//all capital letters for postal code
-// function MyToLowerCaseAll( ) {
-//     $("#carForm :input").val().toLowerCase().trim();
-// }
-
 function show_link() {
     $("#formDivR").show();
     var link = "http://www.jdpower.com/cars/" + localStorage.getItem("make") +
@@ -56,12 +50,8 @@ function save_database() {
 
 
 }
-
 function show_history() {
-
-    alert("want to show history");
     var options = [];
-
     function callback(tx, results) {
         var htmlCode = "";
 
@@ -70,8 +60,8 @@ function show_history() {
             "<th>" + 'Seller Name' + "</th>" +
             "<th>" + 'city' + "</th>" +
             "<th>" + 'Email' + "</th>" +
-            "<th style='text-align: right;'>" + 'phone' + "</th>" +
-            "<th style='text-align: center;'>" + 'Car Make' + "</th>" +
+            "<th>" + 'phone' + "</th>" +
+            "<th>" + 'Car Make' + "</th>" +
             "<th>" + 'Car Model' + "</th>" +
             "<th>" + 'Year' + "</th>" +
             "<th>" + 'Link' + "</th>" +
@@ -79,14 +69,13 @@ function show_history() {
         // results.rows.length gets the length
         for (var i = 0; i < results.rows.length; i++) {
             var row = results.rows[i];
-
-            // Appending all the "li" inside the html code
+            // Appending all the "saved data" inside the html code
             htmlCode += "<tr>" +
                 "<td>" + row['name'] + "</td>" +
                 "<td>" + row['city'] + "</td>" +
                 "<td>" + row['email'] + "</td>" +
-                "<td style='text-align: right;'>" + row['phone'] + "</td>" +
-                "<td style='text-align: center;'>" + row['make'] + "</td>" +
+                "<td>" + row['phone'] + "</td>" +
+                "<td>" + row['make'] + "</td>" +
                 "<td>" + row['model'] + "</td>" +
                 "<td>" + row['year'] + "</td>" +
                 "<td>" + row['link'] + "</td>" +
@@ -96,7 +85,11 @@ function show_history() {
         lv = lv.html(htmlCode);
         lv.listview("refresh");
 
-
+        if (results.rows.length<0){
+            htmlCode +="<p>"+"You do not have saved search"+"</p>";
+            lv = lv.html(htmlCode);
+            lv.listview("refresh");
+        }
     }
 
     Seller.AEselectAll(options, callback);

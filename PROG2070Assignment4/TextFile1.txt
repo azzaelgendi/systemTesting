@@ -1,0 +1,63 @@
+[Test]
+        public void GoToJdPower()
+        {
+            IWebElement phone = driver.FindElement(By.Id("phone"));
+            IWebElement email = driver.FindElement(By.Id("email"));
+            IWebElement name = driver.FindElement(By.Id("name"));
+            IWebElement city = driver.FindElement(By.Id("city"));
+            IWebElement make = driver.FindElement(By.Id("make"));
+            IWebElement model = driver.FindElement(By.Id("model"));
+            IWebElement year = driver.FindElement(By.Id("year"));
+
+            phone.Clear();
+            email.Clear();
+            name.Clear();
+
+            phone.SendKeys("1234567890");
+            email.SendKeys("zoza@gmail.com");
+            city.SendKeys("kitchener");
+            model.SendKeys("rio");
+            make.SendKeys("kia");
+            year.SendKeys("2019");
+            name.SendKeys("Azza");
+
+
+            IWebElement submitButton = driver.FindElement(By.Id("btnSubmit"));
+            submitButton.Click();
+
+            IWebElement showButton = driver.FindElement(By.Id("btnshow"));
+            showButton.Click();
+
+            IWebElement linkButton = driver.FindElement(By.Id("btnLink"));
+            linkButton.Click();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("btnShow")));
+
+            string url = driver.Url;
+            string expectedUrl = "https://www.jdpower.com/Cars/2019/kia/rio";
+            Assert.AreEqual(url, expectedUrl);
+
+        }
+
+
+		        //[Test]
+        //public void TestDuckDuckGoSearch_TitleIsCorrect()
+        //{
+        //    IWebElement searchBar = driver.FindElement(By.Id("name"));
+
+        //    searchBar.Clear();
+
+        //    searchBar.SendKeys("conestogaCollege");
+
+        //    IWebElement searchButton = driver.FindElement(By.Id("search_button_homepage"));
+
+        //    searchButton.Click();
+
+        //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+        //    wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div[1]/div[1]/div[1]/a/span")));
+
+        //    string title = driver.Title;
+
+        //    Assert.AreEqual("conestoga college at DuckDuckGo", title);
+        //}
