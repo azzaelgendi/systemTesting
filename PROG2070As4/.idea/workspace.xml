@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7745f840-3812-4780-80e5-7ba08a9046cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/js/AEFacade.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AEFacade.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/searchlink.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/searchlink.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROG2070Assignment4/.vs/PROG2070Assignment4/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../PROG2070Assignment4/.vs/PROG2070Assignment4/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROG2070Assignment4/.vs/PROG2070Assignment4/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../PROG2070Assignment4/.vs/PROG2070Assignment4/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROG2070Assignment4/.vs/PROG2070Assignment4/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../PROG2070Assignment4/.vs/PROG2070Assignment4/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/PROG2070Assignment4Tests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/PROG2070Assignment4Tests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/bin/Debug/PROG2070Assignment4.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/bin/Debug/PROG2070Assignment4.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/bin/Debug/PROG2070Assignment4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/bin/Debug/PROG2070Assignment4.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/obj/Debug/PROG2070Assignment4.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/obj/Debug/PROG2070Assignment4.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/obj/Debug/PROG2070Assignment4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../PROG2070Assignment4/PROG2070Assignment4/obj/Debug/PROG2070Assignment4.pdb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/searchlink.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+            <state relative-caret-position="154">
+              <caret line="52" column="27" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#header#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -251,7 +257,7 @@
       <workItem from="1553897667340" duration="2627000" />
       <workItem from="1553971073664" duration="26377000" />
       <workItem from="1554050599284" duration="2932000" />
-      <workItem from="1554053800323" duration="11892000" />
+      <workItem from="1554053800323" duration="12503000" />
     </task>
     <task id="LOCAL-00001" summary="added facade.js">
       <created>1554056641957</created>
@@ -271,7 +277,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47398000" />
+    <option name="totallyTimeSpent" value="48009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,8 +393,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/searchlink.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+        <state relative-caret-position="154">
+          <caret line="52" column="27" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#header#0;n#html#0;n#!!top" expanded="true" />
           </folding>

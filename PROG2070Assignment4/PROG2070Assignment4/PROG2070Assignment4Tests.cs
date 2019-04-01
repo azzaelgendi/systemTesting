@@ -22,6 +22,30 @@ namespace PROG2070Assignment4
             string title = driver.Title;
             Assert.AreEqual("PROG2070Assign4", title);
         }
+        
+
+        //[Test]
+        //public void TestDuckDuckGoSearch_TitleIsCorrect()
+        //{
+        //    IWebElement searchBar = driver.FindElement(By.Id("name"));
+
+        //    searchBar.Clear();
+
+        //    searchBar.SendKeys("conestogaCollege");
+
+        //    IWebElement searchButton = driver.FindElement(By.Id("search_button_homepage"));
+
+        //    searchButton.Click();
+
+        //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+        //    wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div[1]/div[1]/div[1]/a/span")));
+
+        //    string title = driver.Title;
+
+        //    Assert.AreEqual("conestoga college at DuckDuckGo", title);
+        //}
+
         [Test]
         public void Test_Link()
         {
@@ -48,11 +72,16 @@ namespace PROG2070Assignment4
 
             IWebElement searchButton = driver.FindElement(By.Id("btnSubmit"));
             IWebElement findLink = driver.FindElement(By.Id("name"));
-            Console.WriteLine("submit");
+
             searchButton.Click();
-            string title = driver.Title;
-            //"https://www.jdpower.com/Cars/2019/kia/rio";
-            Assert.AreEqual(title, "link ready");
+
+            IWebElement showbutton = driver.FindElement(By.Name("btnshow"));
+            showbutton.Click();
+            IWebElement linkButton = driver.FindElement(By.Name("btnLink"));
+            linkButton.Click();
+            string title = driver.Url;
+                //"https://www.jdpower.com/Cars/2019/kia/rio";
+            Assert.AreEqual(title, "https://www.jdpower.com/Cars/2019/kia/rio");
         }
 
         [Test]
