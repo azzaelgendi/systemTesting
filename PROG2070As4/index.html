@@ -47,8 +47,12 @@
         </div>
     </header>
 <section  id="main" name="main" class="container">
-    <div id="formDiv" name="formDiv">
-        <form name="carForm" id="carForm" action="pages/searchlink.html">
+    <div data-role="controlgroup" data-type="horizontal">
+        <button id="newSearch" name="newSearch" style="color: black; background-color: yellow;"><a href="#">Add New Search</a></button>
+        <button id="preSearch" name="preSearch" ><a href="pages/searchhistory.html">View Previous Search</a></button>
+    </div>
+    <div hidden id="formDiv" name="formDiv">
+        <form name="carForm" id="carForm"  action="pages/searchlink.html">
             <h2>Post a Car for Sale</h2>
             <div id="fSet" name="fSet">
                 <fieldset>
@@ -72,7 +76,7 @@
                     <input type="text" id="year" name="year"><br>
                 </fieldset>
             </div>
-            <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit"><br>
+            <input type="submit" id="btnSubmit" name="btnSubmit" value="Save"><br>
         </form>
     </div>
     <div hidden id="sidebarA">

@@ -47,14 +47,14 @@
     </div>
 </header>
 <section id="mainR" name="mainR" class="container">
-    <p>to show the search link press show button </p>
-    <button name="btnshow" id="btnshow">Show</button>
+    <p>Please select an option to proceed </p>
+
     <div hidden id="formDivR" name="formDivR">
-        <button id="btnLink" name="btnLink"><a id="alink" href="#">Check your car on jdpower.com</a></button>
+        <button style="width:400px; height:100px;" id="btnLink" name="btnLink"><a id="alink" href="#">Check your car on jdpower.com</a></button>
         <br>
         <h2>Personal Information</h2>
         <label for="nameR">Seller Name:</label>
-        <input readonly type="text" id="nameR" name="nameR"><br>
+        <p readonly type="text" id="nameR" name="nameR"></p>
         <label for="phoneR">Phone Number:</label>
         <input readonly type="text" name="phoneR" id="phoneR"><br>
         <label for="cityR">City:</label>
@@ -68,21 +68,19 @@
         <input readonly type="text" id="makeR" name="makeR"><br>
         <label for="yearR">Year</label>
         <input readonly type="text" id="yearR" name="yearR"><br>
-
         <br>
     </div>
-    <p>If you want to to edit the information you provided press Back</p>
-    <p>If you want to to Save the information you provided press Save</p>
     <!--group buttons-->
     <div data-role="controlgroup" data-type="horizontal">
-        <button id="AECancel" name="AECancel" style="color: black; background-color: yellow;"><a href="../index.html">Back</a></button>
-        <button id="AEUpdate" name="AEUpdate" class=" ui-btn-active"><a href="searchhistory.html">Save</a></button>
+        <button name="btnshow" id="btnshow">Show the recent search</button>
+        <button id="AECancel" name="AECancel" style="color: black; background-color: yellow;"><a href="../index.html">Back to Home Page</a></button>
+        <button id="AEUpdate" name="AEUpdate" ><a href="searchhistory.html">Go to Saved Search</a></button>
     </div>
 </section>
-<footer data-role="footer" data-position="fixed">
-    <div class="footer">&copy; 2019 &nbsp;<a href="mailto:aelgendy7114@conestogac.on.ca">
-        Azza Elgendy</a></div>
-</footer>
+<!--<footer>-->
+    <!--<div class="footer">&copy; 2019 &nbsp;<a href="mailto:aelgendy7114@conestogac.on.ca">-->
+        <!--Azza Elgendy</a></div>-->
+<!--</footer>-->
 </html>
 
 

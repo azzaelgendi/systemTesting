@@ -1,13 +1,17 @@
-
+function show_form() {
+    $("#formDiv").show();
+    console.info("form");
+}
 
 function init() {
     console.info("Dom is ready");
 
     $("#btnshow").on("click", show_link);
-    $("#AEUpdate").on("click", save_database);
     $("#name").on("change", MyFirstUpper);
-    $("#btnSubmit").on("click", btnSubmit_click);
     $("#showSA").on("click",show_history);
+    $("#newSearch").on("click",show_form);
+    $("#preSearch").on("click",show_history);
+    $("#btnSubmit").on("click",save_database);
 }
 
 function AEinitDB() {

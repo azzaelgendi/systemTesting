@@ -24,30 +24,32 @@ function show_link() {
 }
 
 function save_database() {
+    if (btnSubmit_click()) {
+        console.info("Saving to database");
+        var link = "http://www.jdpower.com/cars/" + localStorage.getItem("make") +
+            "/" + localStorage.getItem("model") + "/" + localStorage.getItem("year");
+        var name = (localStorage.getItem("sellerName"));
+        var phone = (localStorage.getItem("phone"));
+        var email = (localStorage.getItem("email"));
+        var city = (localStorage.getItem("city"));
+        var make = (localStorage.getItem("make"));
+        var model = (localStorage.getItem("model"));
+        var year = (localStorage.getItem("year"));
 
-    console.info("Saving to database");
-    var link = "http://www.jdpower.com/cars/" + localStorage.getItem("make") +
-        "/" + localStorage.getItem("model") + "/" + localStorage.getItem("year");
-    var name = (localStorage.getItem("sellerName"));
-    var phone = (localStorage.getItem("phone"));
-    var email = (localStorage.getItem("email"));
-    var city = (localStorage.getItem("city"));
-    var make = (localStorage.getItem("make"));
-    var model = (localStorage.getItem("model"));
-    var year = (localStorage.getItem("year"));
 
+        var opt = [name, email, city, phone, make, model, year, link];
 
-    var opt = [name, email, city, phone, make, model, year, link];
+        //3. insert into table (by calling insert DAL function and supplying input values
+        function callback() {
+            console.info("seller inserted successfully");
+        }
 
-    //3. insert into table (by calling insert DAL function and supplying input values
-    function callback() {
-        console.info("seller inserted successfully");
+        Seller.AEinsert(opt, callback);
+        alert("New search added");
+        // $(location).prop('href', "../index.html");
+    }else{
+        console.info("Validation failed");
     }
-
-    Seller.AEinsert(opt, callback);
-    alert("New search added");
-    // $(location).prop('href', "../index.html");
-
 
 }
 function show_history() {
@@ -78,7 +80,7 @@ function show_history() {
                 "<td>" + row['make'] + "</td>" +
                 "<td>" + row['model'] + "</td>" +
                 "<td>" + row['year'] + "</td>" +
-                "<td>" + row['link'] + "</td>" +
+                "<td>" + "<a href=\"http://www.jdpower.com/cars/"+row['make']+"/"+row['model']+"/"+row['year']+"\">JD Power Site</a>" + "</td>" +
                 "</tr>";
         }
         var lv = $("#AESearchList");

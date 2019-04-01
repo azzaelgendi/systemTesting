@@ -133,3 +133,8 @@ th,td{
     border: 1px solid #24943A;
     padding: 3px 2px;
 }
+#formDivR input[type=text]{
+    outline: none;
+    border: none;
+    background: transparent;
+}
