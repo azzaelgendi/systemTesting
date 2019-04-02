@@ -17,6 +17,7 @@ namespace PROG2070Assignment4
         public void Setup_Test()
         {
             driver = new FirefoxDriver();
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("file:///C:/Users/AZZA%20ELGENDY/Desktop/github/systemTesting/PROG2070As4/index.html");
             string title = driver.Title;
             Assert.AreEqual("PROG2070Assign4", title);
@@ -25,26 +26,33 @@ namespace PROG2070Assignment4
         [Test]
         public void Test_Url()
         {
+            IJavaScriptExecutor je = (IJavaScriptExecutor)driver;
+            driver = new FirefoxDriver();
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("file:///C:/Users/AZZA%20ELGENDY/Desktop/github/systemTesting/PROG2070As4/index.html");
-            IWebElement phone = driver.FindElement(By.Id("phone"));
+            IWebElement newSearch = driver.FindElement(By.Name("newSearch"));
+            newSearch.Click();
+            IWebElement phone = driver.FindElement(By.Name("phone"));
             IWebElement email = driver.FindElement(By.Id("email"));
             IWebElement name = driver.FindElement(By.Id("name"));
             IWebElement city = driver.FindElement(By.Id("city"));
             IWebElement make = driver.FindElement(By.Id("make"));
             IWebElement model = driver.FindElement(By.Id("model"));
             IWebElement year = driver.FindElement(By.Id("year"));
-
+            //je.ExecuteScript("arguments[0].scrollIntoView(true);", phone);
+            
             phone.Clear();
             email.Clear();
             name.Clear();
-
-            phone.SendKeys("2268683979");
+            
+            name.SendKeys("Azza");
             email.SendKeys("zoza@gmail.com");
+            phone.SendKeys("2268683979");
             city.SendKeys("kitchener");
             model.SendKeys("rio");
             make.SendKeys("kia");
             year.SendKeys("2019");
-            name.SendKeys("Azza");
+            
             IWebElement saveButton = driver.FindElement(By.Name("btnSubmit"));
             saveButton.Click();
             IWebElement showbutton = driver.FindElement(By.Name("btnshow"));
@@ -58,25 +66,32 @@ namespace PROG2070Assignment4
         [Test]
         public void Test_Phone()
         {
-            IWebElement phone = driver.FindElement(By.Id("phone"));
+
+            IJavaScriptExecutor je = (IJavaScriptExecutor)driver;
+            driver = new FirefoxDriver();
+            driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("file:///C:/Users/AZZA%20ELGENDY/Desktop/github/systemTesting/PROG2070As4/index.html");
+            IWebElement newSearch = driver.FindElement(By.Name("newSearch"));
+            newSearch.Click();
+            IWebElement phone = driver.FindElement(By.Name("phone"));
             IWebElement email = driver.FindElement(By.Id("email"));
             IWebElement name = driver.FindElement(By.Id("name"));
             IWebElement city = driver.FindElement(By.Id("city"));
             IWebElement make = driver.FindElement(By.Id("make"));
             IWebElement model = driver.FindElement(By.Id("model"));
             IWebElement year = driver.FindElement(By.Id("year"));
-
+           // je.ExecuteScript("arguments[0].scrollIntoView(true);", phone);
             phone.Clear();
             email.Clear();
             name.Clear();
-
-            phone.SendKeys("12345678");
+            name.SendKeys("Azza");
             email.SendKeys("zoza@gmail.com");
+            phone.SendKeys("12345678");
             city.SendKeys("kitchener");
             model.SendKeys("rio");
             make.SendKeys("kia");
             year.SendKeys("2019");
-            name.SendKeys("Azza");
+           
             IWebElement saveButton = driver.FindElement(By.Name("btnSubmit"));
             saveButton.Click();
             String findElement = driver.FindElement(By.CssSelector("label.error")).Text;
@@ -86,6 +101,7 @@ namespace PROG2070Assignment4
         [Test]
         public void Title_Test()
         {
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("file:///C:/Users/AZZA%20ELGENDY/Desktop/github/systemTesting/PROG2070As4/pages/searchlink.html");
             IWebElement showbtm = driver.FindElement(By.Name("btnshow"));
             showbtm.Click();
@@ -94,15 +110,15 @@ namespace PROG2070Assignment4
 
         }
 
-        //[Test]
-        //public void Show_History_Test()
-        //{
-        //    driver.Navigate().GoToUrl("file:///C:/Users/AZZA%20ELGENDY/Desktop/github/systemTesting/PROG2070As4/pages/searchhistory.html");
-        //    IWebElement showHistory = driver.FindElement(By.Name("AESearchList"));
-        //    showHistory.Click();
-
-        //}
         [Test]
+        public void Show_History_Test()
+        {
+            driver.Navigate().GoToUrl("file:///C:/Users/AZZA%20ELGENDY/Desktop/github/systemTesting/PROG2070As4/pages/searchhistory.html");
+            IWebElement showHistory = driver.FindElement(By.Name("AESearchList"));
+            showHistory.Click();
+
+        }
+
         [TearDown]
         public void TeardownTest()
         {

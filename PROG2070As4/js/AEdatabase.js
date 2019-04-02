@@ -19,6 +19,12 @@ var DB = {
 
     // Whenever we create a function onside an object we follow this approach: "functionName: functionBody() {}"
     AECreateDatabase: function () {
+
+
+        //
+
+
+        //
         var shortName = "CarDB";
         var version = "1.0";
         var displayName = "DB for cars sellers app";

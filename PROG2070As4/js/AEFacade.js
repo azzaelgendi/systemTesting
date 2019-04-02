@@ -44,8 +44,8 @@ function save_database() {
             console.info("seller inserted successfully");
         }
 
-        Seller.AEinsert(opt, callback);
-        alert("New search added");
+        //Seller.AEinsert(opt, callback);
+        //alert("New search added");
         // $(location).prop('href', "../index.html");
     }else{
         console.info("Validation failed");

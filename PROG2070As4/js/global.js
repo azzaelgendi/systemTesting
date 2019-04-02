@@ -23,15 +23,15 @@ function AEinitDB() {
             console.error("Error: Cannot create tables: Database does not exist");
         }
     } catch (e) {
-        console.error("Error: (Fatal) Error in initDB(). Cannot proceed");
+        console.error("Error: (Fatal) Error in initDB(). Cannot proceed"+e);
     }
 }
 
 //ready function
 $(document).ready(function () {
-    AEinitDB();
-    init();
 
+    init();
+    AEinitDB();
 
 });
 
