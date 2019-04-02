@@ -5,23 +5,8 @@
  *       Azza Elgendy, March 2nd : Created
  */
 function btnSubmit_click() {
+
     var form = $("#carForm");
-    var sellerName=$("#name").val();
-    localStorage.setItem("sellerName",sellerName);
-    var phone=$("#phone").val();
-    localStorage.setItem("phone",phone);
-    var email=$("#email").val();
-    localStorage.setItem("email",email);
-    var city=$("#city").val();
-    localStorage.setItem("city",city);
-    var make=$("#make").val();
-    localStorage.setItem("make",make);
-    var model=$("#model").val();
-    localStorage.setItem("model",model);
-    var year=$("#year").val();
-    localStorage.setItem("year",year);
-
-
     form.validate({
         rules: {
             name: {
@@ -97,15 +82,7 @@ function btnSubmit_click() {
     });
     return form.valid();
 
-    var carsList=JSON.parse(localStorage.getItem("carsList"));
-    if (carsList!=null) {
-        var car = [{sellerName, email, city, phone, make, model, year}];
-        localStorage.setItem("car", JSON.stringify(car));
-        car = JSON.parse(localStorage.getItem("car"));
-        carsList.push({car});
-        localStorage.removeItem("car");
-        localStorage.setItem("carsList", JSON.stringify(carsList));
-    }
+
 }
 
 
@@ -129,3 +106,33 @@ jQuery.validator.addMethod("checkYear",
         return this.optional(element) || regex.test(value);
     },
     "Please custom valid year");
+
+function saveToLocalStorage() {
+    if (btnSubmit_click()) {
+        var sellerName = $("#name").val();
+        localStorage.setItem("sellerName", sellerName);
+        var phone = $("#phone").val();
+        localStorage.setItem("phone", phone);
+        var email = $("#email").val();
+        localStorage.setItem("email", email);
+        var city = $("#city").val();
+        localStorage.setItem("city", city);
+        var make = $("#make").val();
+        localStorage.setItem("make", make);
+        var model = $("#model").val();
+        localStorage.setItem("model", model);
+        var year = $("#year").val();
+        localStorage.setItem("year", year);
+        var carsList = [];
+        //var carsin=JSON.stringify(carsList);
+        //localStorage.setItem("carsList",carsin);
+        carsList = JSON.parse(localStorage.getItem("carsList"));
+        if (carsList != null) {
+            var car = [{sellerName, email, city, phone, make, model, year}];
+            localStorage.setItem("car", JSON.stringify(car));
+            car = JSON.parse(localStorage.getItem("car"));
+            carsList.push({car});
+            localStorage.setItem("carsList", JSON.stringify(carsList));
+        }
+    }
+}

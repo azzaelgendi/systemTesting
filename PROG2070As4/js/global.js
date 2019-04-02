@@ -11,7 +11,8 @@ function init() {
     $("#showSA").on("click",show_history);
     $("#newSearch").on("click",show_form);
     $("#preSearch").on("click",show_history);
-    $("#btnSubmit").on("click",save_database);
+    // $("#btnSubmit").on("click",save_database);
+    $("#btnSubmit").on("click",saveToLocalStorage);
 }
 
 function AEinitDB() {
