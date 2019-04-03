@@ -3,36 +3,27 @@ function show_form() {
     console.info("form");
 }
 
+function clear_click() {
+    localStorage.clear();
+    console.info("Local storage cleared");
+}
+
 function init() {
     console.info("Dom is ready");
 
     $("#btnshow").on("click", show_link);
     $("#name").on("change", MyFirstUpper);
-    $("#showSA").on("click",show_history);
+    $("#showSA").on("click",callHistoryList);
     $("#newSearch").on("click",show_form);
-    $("#preSearch").on("click",show_history);
-    // $("#btnSubmit").on("click",save_database);
+    $("#preSearch").on("click",callHistoryList);
     $("#btnSubmit").on("click",saveToLocalStorage);
+    $("#clear").on("click",clear_click);
 }
 
-function AEinitDB() {
-    try {
-        DB.AECreateDatabase();
-        if (db) {
-            DB.AECreateTables();
-        } else {
-            console.error("Error: Cannot create tables: Database does not exist");
-        }
-    } catch (e) {
-        console.error("Error: (Fatal) Error in initDB(). Cannot proceed"+e);
-    }
-}
 
 //ready function
 $(document).ready(function () {
 
     init();
-    AEinitDB();
-
 });
 

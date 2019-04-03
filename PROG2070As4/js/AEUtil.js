@@ -6,6 +6,7 @@
  */
 function btnSubmit_click() {
 
+
     var form = $("#carForm");
     form.validate({
         rules: {
@@ -85,7 +86,6 @@ function btnSubmit_click() {
 
 }
 
-
 jQuery.validator.addMethod("checkPhone",
     function (value, element) {
         // Regex expression for at least one capital and one number
@@ -123,16 +123,9 @@ function saveToLocalStorage() {
         localStorage.setItem("model", model);
         var year = $("#year").val();
         localStorage.setItem("year", year);
-        var carsList = [];
-        //var carsin=JSON.stringify(carsList);
-        //localStorage.setItem("carsList",carsin);
-        carsList = JSON.parse(localStorage.getItem("carsList"));
-        if (carsList != null) {
-            var car = [{sellerName, email, city, phone, make, model, year}];
-            localStorage.setItem("car", JSON.stringify(car));
-            car = JSON.parse(localStorage.getItem("car"));
-            carsList.push({car});
-            localStorage.setItem("carsList", JSON.stringify(carsList));
-        }
     }
+    var carsList = JSON.parse(localStorage.getItem("carsList")) || [];
+    carsList.push({name: sellerName, email: email, city: city, phone: phone, make: make, model: model, year: year});
+    localStorage.setItem("carsList", JSON.stringify(carsList));
+
 }
